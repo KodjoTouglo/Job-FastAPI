@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, Date, ForeignKey
 from sqlalchemy.orm import relationship
 
-from database.base import Base
+from data.base import Base
 
 class Job(Base):
     id = Column(Integer, primary_key=True, index=True)
@@ -10,7 +10,7 @@ class Job(Base):
     company_url = Column(String)
     location = Column(String, nullable=False)
     description = Column(String)
-    date_post = Column(Date)
+    date_posted = Column(Date)
     is_active = Column(Boolean(), default=True)
     owner_id = Column(Integer, ForeignKey('user.id'))
     owner = relationship('User', back_populates='jobs')

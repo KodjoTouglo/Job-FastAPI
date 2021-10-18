@@ -5,6 +5,9 @@ from core.config import settings
 from database.session import engine
 from database.base import Base
 
+from models.jobs import Job
+from models.users import User
+
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
